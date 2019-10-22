@@ -1,0 +1,18 @@
+<% provide :head_tags do %>
+    <meta name='turbolinks-visit-control' content='reload'>
+    <script>
+    document.addEventListener("DOMContentLoaded", function(){
+        initMap(<%= @place.latitude %>, <%= @place.longitude %>)
+    });
+    </script>
+<% end %>
+<br>
+<h1 class="has-text-centered"><%= @place.address.tr(",", "") %></h1>
+<p class="has-text-centered">Latitude: <%= @place.latitude %></p>
+<p class="has-text-centered">Longitude: <%= @place.longitude %></p>
+<hr>
+
+<div id="map"></div>
+<div class="but">
+    <%= link_to "Edit this Location", edit_place_path(@place), class: 'button is-link' %>
+</div>

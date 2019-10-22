@@ -1,0 +1,36 @@
+<h1 class="has-text-centered">What details do you know about the address?</h1>
+<br>
+
+<%= form_with model: @place, local: true do |f| %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th class="has-text-centered">Name</th>
+      <th class="has-text-centered">Number</th>
+      <th class="has-text-centered">Street</th>
+      <th class="has-text-centered">Suburb</th>
+      <th class="has-text-centered">State</th>
+      <th class="has-text-centered">ZIP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= f.text_field :name %></td>
+      <td><%= f.text_field :number %></td>
+      <td><%= f.text_field :street %></td>
+      <td><%= f.text_field :suburb %></td>
+      <td><%= f.text_field :state %></td>
+      <td><%= f.text_field :zip %></td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<div class="but">
+  <%= f.submit class: "button has-text-centered is-link"%>
+</div>
+
+
+<% end %>

@@ -1,0 +1,29 @@
+<h1>All Places</h1>
+<p>Find me in app/views/places/index.html.erb</p>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Postal Code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @places.each do |place| %>
+    <tr>
+      <td><%= link_to(place.name, place_path(place)) %></td>
+      <td><%= place.address %></td>
+      <td><%= place.zip %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to "Add a location", new_place_path, class: "button has-text-centered is-link" %>
+
+
+
+
+
